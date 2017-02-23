@@ -1,0 +1,7 @@
+<div *ngIf="inputIconName" class="ui left icon input">
+    <i class="{{inputIconName}} icon"></i>
+    <input type="{{inputType}}" [attr.placeholder]="inputPlaceHolder" (change)="onChange($event)" (keyup)="onChange($event)">
+</div>
+<div *ngIf="!inputIconName">
+    <input type="{{inputType}}" [attr.placeholder]="inputPlaceHolder" (change)="onChange($event)" (keyup)="onChange($event)">
+</div>

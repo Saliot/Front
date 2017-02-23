@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAY;EAER,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,IAAI;;AAIjB,YAAY;EAET,gBAAgB,EAAE,SAAS;EAC3B,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,KAAK;;AAIrB,UAAU;EAEN,WAAW,EAAE,IAAI",
+"sources": ["er-layout.component.scss"],
+"names": [],
+"file": "er-layout.component.css"
+}

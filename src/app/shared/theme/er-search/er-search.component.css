@@ -1,0 +1,24 @@
+.form-control,.btn{
+
+    color: #666;
+    background-color: #374850;
+    border-style: none;
+    margin-top: 20px;
+ 
+}
+
+.input-group{
+    
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width:90%;
+
+}
+
+.btn{
+
+    border-style: 1px;
+    height: 34px;
+ 
+}

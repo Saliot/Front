@@ -1,0 +1,45 @@
+.container-fluid{
+   margin-left:0;
+   padding-left:0;
+   padding-right: 0;
+}
+.navbar-header{
+
+  width: 13%;
+  
+}
+
+.navbar-brand{
+  color: white; 
+  width: 100%;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0 !important;
+  
+}
+
+.navbar-nav > li > a{
+  padding-top: 15px !important;
+  padding-bottom: 0 !important;
+  height: 50px;
+  color: white; 
+  }
+
+.navbar {
+  background-color: #3c8dbc;
+  min-height: 50px !important; 
+  padding-right: 0px;
+  margin-bottom: 0 !important;
+  border-width: 0;
+  }
+
+.navbar-header{
+  background-color: #337ab7;
+  padding: 0;
+
+}
+
+.navbar-right {
+padding-right: 20px;
+}

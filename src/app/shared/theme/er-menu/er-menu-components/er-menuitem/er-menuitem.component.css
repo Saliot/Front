@@ -1,0 +1,11 @@
+li > a,b {
+
+    border-radius:0px;
+    color: white;
+    list-style: none;
+}
+
+li > a:hover, li > a:focus {
+    background-color: #1a2226;
+   
+}

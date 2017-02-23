@@ -1,0 +1,87 @@
+<div id="Login" class="ui middle aligned center aligned grid">
+   <form novalidate class="ui form" style="width: 80%;" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <div id="LoginSegment" class="ui segment">
+          <h1>Register Form</h1>
+          <div class="two fields">
+            <div class="field">
+                <label>First name</label>
+                <input type="text" name="firstName" formControlName="firstName" placeholder="Your First Name (required)" required>
+                <div *ngIf="formErrors.firstName" style="color:#9F3A38;">
+                   {{ formErrors.firstName }}
+                </div> 
+            </div>
+            <div class="field">
+                <label>Last name</label>
+                <input type="text" formControlName="lastName" placeholder="Your Last Name (required)" required>
+                <div *ngIf="formErrors.lastName" style="color:#9F3A38;">
+                   {{ formErrors.lastName }}
+                </div> 
+            </div>
+         </div>
+         <div class="two fields">
+            <div class="field">
+                <label>Email</label>
+                <input type="email" formControlName="email" placeholder="Your Email (required)" required>
+                <!--<er-input [inputType]="'email'" [inputPlaceHolder]="'Your Email (required)'" formControlName="email"></er-input>-->
+                <div *ngIf="formErrors.email" style="color:#9F3A38;">
+                   {{ formErrors.email }}
+                </div>
+            </div>
+            <div class="field">
+               <label>Country</label>
+               <div class="ui fluid search selection dropdown">
+               <input type="hidden" name="country" formControlName="country" (keypress)="onKey($event)">
+               <i class="dropdown icon"></i>
+               <div class="default text">Select Country</div>
+                <div class="menu">
+                    <div *ngFor="let c of countries" class="item" (click)="selectCountry(c)">
+                      <i class="{{c.countryCode.toLowerCase()}} flag"></i>{{c.countryDescription}}
+                    </div>
+                </div>
+               </div>
+            </div>
+          </div> 
+          <div class="field">
+               <lsu-dropdown formControlName="company" [data]="companies" [textField]="'companyDescription'" [placeHolder]="'Select Company'"></lsu-dropdown>
+          </div>
+          <!--<div *ngIf="this.registerForm.controls['country']" class="field">
+               <label>Company</label>
+               <div class="ui fluid search selection dropdown">
+               <input type="hidden" name="company" formControlName="company">
+               <i class="dropdown icon"></i>
+               <div class="default text">Select Company</div>
+                <div class="menu">
+                    <div *ngFor="let cp of companies" class="item">
+                      {{cp.companyDescription}}
+                    </div>
+                </div>
+               </div>
+          </div>-->
+          <div class="two fields">
+            <div class="field">
+                <label>Password</label>
+                <input type="password" formControlName="password" placeholder="Your Password (required)" required>
+                <div *ngIf="formErrors.password" style="color:#9F3A38;">
+                   {{ formErrors.password}}
+                </div>
+            </div>
+            <div class="field">
+                <label>Password Confirmation</label>
+                <input type="password" formControlName="passwordConfirmed" placeholder="Your Password Again (required)" required>
+                 <div *ngIf="formErrors.passwordConfirmed" style="color:#9F3A38;">
+                   {{ formErrors.passwordConfirmed}}
+                </div>
+            </div>
+          </div>
+
+          <button id="submit" name="submit" class="ui primary button" [disabled]="!registerForm.valid">Register</button>
+          <button id="reset" name="reset" type="reset" class="ui reset button" [@myTrigger]='state' (click)='toggleState()'>Reset</button>
+           
+        
+      </div>
+      <div>
+      {{registerForm.value | json}}
+      </div>  
+   </form>
+ 
+</div>

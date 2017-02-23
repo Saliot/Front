@@ -1,0 +1,19 @@
+<li *ngIf="menuItem"> 
+
+	<a data-toggle="collapse" [href]="'#' + menuItem.menuitemKey">
+		<i *ngIf="menuItem.menuitemIcon" class="{{ menuItem.menuitemIcon }}" style="margin-right:10px"> </i>
+		<span>{{menuItem.menuitemDescription}}</span>
+		<a *ngIf="menuItem.childreenMenuitems && menuItem.childreenMenuitems.length>0">
+			<b class="fa fa-angle-down pull-right" [ngClass]="{'fa-rotate-180': menuItem.expanded}" (click)="onToggleSubMenu($event,menuItem)"></b>
+		</a>
+	</a>
+
+	<ul *ngIf="menuItem.childreenMenuitems" class="nav collapse" id="{{menuItem.menuitemKey}}">
+    <er-menuitem [menuItem]="subItem"
+                  *ngFor="let subItem of menuItem.childreenMenuitems"
+				  class="nav nav-pills nav-stacked"></er-menuitem>
+  	</ul>
+</li>
+
+
+

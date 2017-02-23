@@ -1,0 +1,22 @@
+header,aside,article,section  {
+  padding: 0;
+  margin: 0;
+}
+
+.erSidebar{
+  width: 13%;
+  background-color: #222d32;
+  height: 100%;
+  float: left;
+}
+
+.erContent{
+  background-color: #F1F1F1;
+  width: 87%;
+  float: right;
+}
+
+.erFooter{
+      width: 100%;
+      background-color: #337ab7;
+}
