@@ -28,8 +28,6 @@ export class RegistrationService {
     }
 
    
-
-
     private handleError(error: Response){
 
         console.error(error);

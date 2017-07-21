@@ -131,6 +131,7 @@ formErrors = {
   'lastName' : '',
   'email':'',
   'country':'',
+  'company':'',
   'password':'',
   'passwordConfirmed':''
 
@@ -166,7 +167,7 @@ validationMessages ={
 
    'company' : {
 
-      'required': 'Country is required.'
+      'required': 'Company is required.'
   },
   
   'password' : {
@@ -183,20 +184,30 @@ validationMessages ={
 }
 
 
-  /*registerUser(u: Object){
+  registerUser(): void{
 
-      this._registrationService.addUser(u)
-           .subscribe(data => this.user= data,
-                      error => this.errorMessage=<any>error);
+      this._registrationService.addUser(this.registerForm.value)
+           .subscribe(data => console.log('Result of register User' + data),
+                      error => this.errorMessage=<any>error,
+                      () => this.onRegisterUserComplete()
+                    );
 
-  }*/
+  }
 
-  public selectCountry(c: ICountry) :void {
-    
-    this.registerForm.controls['country'].setValue(c.countryKey);
+  onRegisterUserComplete(): void {
 
-}
+        this.registerForm.reset();
+  }
 
+//   public selectCountry(c: ICountry) :void {
+
+//     this.registerForm.controls['country'].setValue(c);
+// }
+
+//  public selectCompany(c: ICompany) :void {
+
+//     this.registerForm.controls['company'].setValue(c);
+// }
 
  onKey(event:any) { // without type info
     console.log(event.target.value);

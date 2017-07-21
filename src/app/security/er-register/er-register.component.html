@@ -29,6 +29,13 @@
             </div>
             <div class="field">
                <label>Country</label>
+               <lsu-dropdown formControlName="country" 
+               [data]="countries" 
+               [textField]="'countryDescription'" 
+               [placeHolder]="'Select your Country'"></lsu-dropdown>
+            </div>
+            <!-- <div class="field">
+               <label>Country</label>
                <div class="ui fluid search selection dropdown">
                <input type="hidden" name="country" formControlName="country" (keypress)="onKey($event)">
                <i class="dropdown icon"></i>
@@ -39,10 +46,29 @@
                     </div>
                 </div>
                </div>
-            </div>
+            </div> -->
           </div> 
+          <!--<div class="field">
+            <label>Company</label>
+               <div class="ui fluid search selection dropdown">
+               <input type="hidden" name="company" formControlName="company" (keypress)="onKey($event)">
+               <i class="dropdown icon"></i>
+               <div class="default text">Select Country</div>
+                <div class="menu">
+                    <div *ngFor="let c of companies" class="item" (click)="selectCompany(c)">
+                      {{c.companyDescription}}
+                    </div>
+                </div>
+            </div>
+          </div>-->
+
+
           <div class="field">
-               <lsu-dropdown formControlName="company" [data]="companies" [textField]="'companyDescription'" [placeHolder]="'Select Company'"></lsu-dropdown>
+               <label>Company</label>
+               <lsu-dropdown formControlName="company" 
+               [data]="companies" 
+               [textField]="'companyDescription'" 
+               [placeHolder]="'Select Company'"></lsu-dropdown>
           </div>
           <!--<div *ngIf="this.registerForm.controls['country']" class="field">
                <label>Company</label>
